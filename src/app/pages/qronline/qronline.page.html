@@ -1,0 +1,14 @@
+<app-header titulo="QR Page"></app-header>
+
+<ion-content class="ion-padding">    
+  <p>lector QR</p>
+    <ion-button (click)="scanCode()" expand="full">QR boton</ion-button>
+      <div *ngIf="scannedData">
+        <p>
+          Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+        </p>
+        <p>
+          Scanned Code Format : <b>{{ scannedData["format"] }}</b>
+        </p>
+      </div>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Colegio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refrescando...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <!-- <ion-input type="text" ></ion-input> -->
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <!-- <ion-input type="password" ></ion-input> -->
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div>
+    <ion-button expand="block" padding color="tertiary" (click)="processlogin()">Login</ion-button>
+    <!-- <ion-button expand="block" padding color="tertiary" (click)="processlogin_2()">Login_2</ion-button> -->
+  </div>
+
+</ion-content>
