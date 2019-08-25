@@ -25,7 +25,9 @@ export class QronlinePage implements OnInit {
       .then(barcodeData => {
         //alert("Barcode data " + JSON.stringify(barcodeData));
         this.scannedData = barcodeData;
-        this.proccesalumno();
+        if(this.scannedData['text']!='' && this.scannedData['format'] == 'text'){
+          this.proccesalumno();
+        }
       })
       .catch(err => {
         console.log("Error", err);
